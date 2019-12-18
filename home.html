@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="header">
+		<p class="title">Music Genre Predictor</p>
+		<p class="subtitle">Upload an MP3 file in .wav format and let us predict its genre!</p>
+	</header>
+
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+
+	<form class="form" method="post" action="/" enctype="multipart/form-data">
+		<input class="form-button" type="file" name="file" autocomplete="off" required>
+		<!-- <input class="form-button submit-button" type="submit" value="Submit File"> -->
+		<br/>
+	<!-- </form> -->
+	<!-- <form class="form" method="post" action="/"> -->
+		<textarea class="form-text" name="lyrics" required></textarea>
+		<br/>
+		<!-- <input class="form-button submit-button" type="submit" value="Submit Lyrics"> -->
+		<input class="form-button submit-button" type="submit" value="Submit">
+	</form>
+
+	<div class="output">
+		<div class="output-content">
+			<h2 class="results-header">Results Summary</h2>
+			<p class="results-subheader">Below is the waveform classification output summary.</p>
+			<div class="results-body">
+				<div class="results-key">
+					<p class="results-paragraph">MP3 File Name: </p>
+					{% if upload_name %}
+					<p class="results-paragraph results-field"> {{upload_name}} </p>
+					{% else %}
+					<p class="results-paragraph results-field"> None </p>
+					{% endif %}
+				</div>
+				<p class="results-paragraph">Converted Waveform Image:</p>
+				<br/>
+				{% if waveform_name %}
+				<p class="results-paragraph"><img class="generated-waveform" src="{{waveform_name}}"></p>
+				{% else %}
+				<p></p>
+				{% endif %}
+			</div>
+			<div class="results-body">
+				<p class="results-paragraph">Classification Output Confidence:</p>
+				<br/>
+				<tbody class="results-paragraph results-field">
+					{% for key, segment in prediction_text %}
+					  <tr>
+						<td>{{ key }}</td>
+						<td>{{ segment }}</td>
+					  </tr>
+					  <br/>
+					{% endfor %}
+				</tbody>  
+			</div>
+			<div class="results-body">
+				<p class="results-paragraph">Lyrics Classification Output:</p>
+				<br/>
+				{% if lyrics_classification %}
+				<tbody class="results-paragraph results-field"> {{lyrics_classification}} </tbody>
+				{% else %}
+				<tbody class="results-paragraph results-field"></tbody>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	{% if message %}
+	<div id="team-name-footer">{message}</div>
+	{% else %}
+	<div id="team-name-footer">brought to you by GenreGen</div>
+	{% endif %}
+
+</body>
+
+</html>
