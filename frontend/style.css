@@ -1,0 +1,129 @@
+body {
+	background-color: #000000;
+	color: #F7F7F8;
+
+}
+
+.form {
+	margin-top: 30px;
+	margin-left: 80px;
+}
+
+.header {
+	margin-top: 100px;
+	margin-left: 100px;
+}
+
+.title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 24px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.subtitle {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #989AAD;
+	font-family: 'Roboto', sans-serif;
+}
+
+.form-button {
+	padding: 10px 20px 10px 20px;
+	margin: 20px;
+	color: white;
+	border-style: solid;
+	border-radius: 15px;
+	border-color: #F7F7F8;
+	border-width: 0.5px;
+	background-color: transparent;
+}
+
+.form-text {
+	padding: 10px 20px 10px 20px;
+	margin: 20px;
+	width: 400px;
+	height: 200px;
+	margin-top: 10px;
+	color: white;
+	border-style: solid;
+	border-radius: 15px;
+	border-color: #F7F7F8;
+	border-width: 0.5px;
+	background-color: transparent;
+}
+
+.submit-button {
+	background-color: white;
+	color: black;
+}
+
+.output {
+	border-radius: 30px;
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+	top: 50px;
+	left: 600px;
+	background-color: white;
+	color: black;
+}
+
+.output-content {
+	padding: 20px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.results-header {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	color: #474C5F;
+	margin: 5px;
+}
+
+.results-subheader {
+	font-family: 'Roboto', sans-serif;
+	color: #989AAD;
+	font-size: 12px;
+	margin: 5px;
+}
+
+.results-body {
+	margin-top: 25px;
+}
+
+.results-paragraph {
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	color: #474C5F;
+	margin: 5px;
+	font-weight: 300;
+	display: inline-block;
+}
+
+.results-field {
+	width: 250px;
+	padding: 3px 10px 3px 10px;
+	border-radius: 10px;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 12px;
+}
+
+.generated-waveform {
+	width: 750px;
+}
+
+#team-name-footer {
+	position: absolute;
+	bottom: 20px;
+	right: 50px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+}
+
+table, tr, td {
+	border: 1px solid black;
+}
